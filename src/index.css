@@ -1,0 +1,314 @@
+:root {
+  --main-red: #CB0000;
+  --main-grey: #B8B3B2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  color: #222830;
+  min-height: 100vh;
+  background-color:#fff;
+  width: 100vw;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  font-family: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* HEADER Section */
+
+header {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: #fff;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  padding: .7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h2 {
+  color: #a09d9d;
+}
+
+.header-img {
+  height: 20px;
+  width: 20px;
+  opacity: .7;
+}
+
+
+/* MAIN Section */
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+
+
+/* SELECT COUNTRY Section */
+
+.search-input {
+  width: 270px;
+  position: relative;
+  margin: 0 auto 1.5rem;
+}
+
+input {
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  padding: .4rem;
+  border: 1px solid var(--main-grey);
+  font-size: .8rem;
+  border-radius: 3px;
+}
+
+
+/* Auto-complete drop-down */
+
+ul {
+  position: absolute;
+  width: 100%;
+  border: 1px solid var(--main-grey);
+  border-top: none;
+  z-index: 999;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+  z-index: 1000;
+  padding: .5rem;
+}
+
+ul li {
+  margin-bottom: .3rem;
+  font-size: .8rem;
+}
+
+ul li.selected {
+  background-color: rgb(220, 220, 226);
+}
+
+ul li:hover {
+  background-color: rgb(220, 220, 226);
+}
+
+ul.max-height {
+  height: 200px;
+  width: 270px;
+  overflow-y: scroll;
+}
+
+
+/* MAP Section */
+
+#chartdiv {
+  width: 60%;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border: 1px solid var(--main-red);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* MACRO REGIONS Section */
+
+.macro-regions {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.macro-regions a {
+  margin: 0 1rem .5rem 0;
+  padding: .1rem .4rem;
+  color: #000000;
+  position: relative;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+  font-size: .8rem;
+}
+
+.macro-regions a:focus {
+  background-color: var(--main-red);
+  color: #fff;
+}
+
+.macro-regions a:visited {
+  background-color: var(--main-red);
+}
+
+.macro-regions a::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-red);
+  bottom: -3px;
+  left: 0;
+  transform: scale(0);
+  transition: all .3s ease-in-out;
+}
+
+.macro-regions a:hover::after {
+  transform: scale(1);
+}
+
+
+
+
+
+/* TABLE Section */
+
+.table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .5rem 0 .5rem .8rem;
+  background-color: var(--main-red);
+  color: #fff;
+  border-radius: 3px;
+  font-size: .8rem;
+  position: sticky;
+  top: 45px;
+  z-index: 999;
+}
+
+
+.table-content {
+  width: 100%;
+  padding: 1rem 0 1rem 1rem;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  background-color: #fff;
+  margin-bottom: .5rem;
+  font-size: .8rem;
+}
+
+.table-row:hover {
+  background-color: #dce0e6;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.title i {
+  font-size: .7rem;
+  cursor: pointer;
+  margin-right: .3rem;
+}
+
+.title.country i {
+  margin-left: .3rem;
+}
+
+.country {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+}
+
+.country img {
+  height: 15px;
+  width: 15px;
+  margin-right: .5rem;
+  border: 1px solid var(--main-grey);
+  object-fit: cover;
+  opacity: .5;
+}
+
+.total {
+  text-align: end;
+  width: 120px;
+}
+
+.active {
+  text-align: end;
+  width: 120px;
+}
+
+.recovered {
+  text-align: end;
+  width: 140px;
+}
+
+.recovery-rate {
+  text-align: end;
+  width: 120px;
+}
+
+.deaths {
+  text-align: end;
+  width: 120px;
+}
+
+.death-rate {
+  text-align: end;
+  width: 120px;
+}
+
+.delete {
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  color: #B43434;
+}
+
+.delete a {
+  background-color: #E5D6D6;
+  padding: .2rem .6rem;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+}
+
+.delete a:hover {
+  background-color: #A3A3A3;
+  color: #fff;
+}
